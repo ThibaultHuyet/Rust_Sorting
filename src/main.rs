@@ -8,7 +8,6 @@ fn main ()
     // insertion_sort(&mut xs);
     // insertion_sort(&mut name);
 
-    let len = xs.len();
     heap_sort(&mut xs);
 
     println!("{:?}", nums);
