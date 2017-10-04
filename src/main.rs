@@ -9,14 +9,13 @@ fn main ()
 
     // insertion_sort(&mut nums);
     // insertion_sort(&mut xs);
-    insertion_sort(&mut name);
+    selection_sort(&mut name);
 
-    heap_sort(&mut xs);
+    selection_sort(&mut xs);
+
+    selection_sort(&mut nums);
 
     println!("{:?}", nums);
-    bubble_sort(&mut nums);
-
-    println!("{:?}", nums);
-    // println!("{:?}", xs);
-    // println!("{:?}", name);
+    println!("{:?}", xs);
+    println!("{:?}", name);
 }

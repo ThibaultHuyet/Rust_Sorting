@@ -84,6 +84,24 @@ pub mod sorting
             }
 
         }
+    }
 
+    pub fn selection_sort<T: PartialOrd>(arr: &mut [T])
+    {
+        // track position of elements finished
+        // swap lowest in array with current tracked position
+
+        let n = arr.len();
+
+        for i in 0..n
+        {
+            for j in 0..n - 1
+            {
+                if arr[j] > arr[i]
+                {
+                    arr.swap(j, i);
+                }
+            }
+        }
     }
 }
