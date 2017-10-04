@@ -14,6 +14,9 @@ fn main ()
     heap_sort(&mut xs);
 
     println!("{:?}", nums);
-    println!("{:?}", xs);
-    println!("{:?}", name);
+    bubble_sort(&mut nums);
+
+    println!("{:?}", nums);
+    // println!("{:?}", xs);
+    // println!("{:?}", name);
 }

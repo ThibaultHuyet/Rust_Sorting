@@ -67,4 +67,23 @@ pub mod sorting
             heapify(arr, i, 0)
         }
     }
+
+    pub fn bubble_sort<T: PartialOrd>(arr: &mut [T])
+    {
+        let n = arr.len();
+
+        for _ in 0..n
+        {
+            for j in 0..n - 1
+            {
+                if arr[j] > arr[j + 1]
+                {
+                    arr.swap(j, j + 1);
+                }
+
+            }
+
+        }
+
+    }
 }
