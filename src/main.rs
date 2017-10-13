@@ -11,7 +11,7 @@ fn main ()
     // insertion_sort(&mut xs);
     selection_sort(&mut name);
 
-    selection_sort(&mut xs);
+    quicksort(&mut xs, 0, 7);
 
     selection_sort(&mut nums);
 

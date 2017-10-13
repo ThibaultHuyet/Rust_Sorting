@@ -104,4 +104,62 @@ pub mod sorting
             }
         }
     }
+
+    // pub fn shell_sort<T: PartialOrd>(arr: &mut [T])
+    // {
+    //     let n = arr.len();
+
+    //     let mut gap = n / 2;
+    //     while gap > 0
+    //     {
+    //         let mut i = gap;
+    //         while i < n
+    //         {
+    //             let temp = arr[i];
+    //             let mut j = i;
+    //             while j >= gap && arr[j - gap] > temp
+    //             {
+    //                 arr[j] = arr[j - gap];
+    //                 j -= gap;
+    //             }
+    //             arr[j] = temp;
+    //             i += 1;
+    //         }
+    //         gap /= 2;
+    //     }
+    //}   
+
+    pub fn quicksort<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize)
+    {
+        if lo < hi
+        {
+            let p = partition(&mut arr, lo, hi);
+            quicksort(&mut arr, lo, p - 1);
+            quicksort(&mut arr, p + 1, hi)
+        }
+    }
+
+    pub fn partition<T: PartialOrd>(arr: &mut [T], lo: usize, hi: usize) -> usize
+    {
+        let pivot = &arr[hi];
+        let mut i = lo - 1;
+        let mut j = lo;
+
+        while j < hi
+        {
+            if arr[j].lt(&pivot)
+            {
+                i +=1;
+                arr.swap(i, j);
+            }
+            j += 1;
+        }
+
+        if arr[hi] < arr[i + 1]
+        {
+            arr.swap(hi, i + 1)
+        }
+
+        i + 1
+    }
 }
